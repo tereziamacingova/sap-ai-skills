@@ -9,10 +9,12 @@ description: >
   Outlook for Mac — one click to confirm and the event lands in Exchange with a popup alarm.
   Supports timed reminders, all-day reminders, recurring weekly reminders, team-aware events
   (colleague name noted in description), sprint setup (4 events in one command), and listing
-  all upcoming reminders.
+  all upcoming reminders. Note: currently macOS only (Outlook for Mac).
 ---
 
 Creates Microsoft Outlook calendar reminders from plain language. Just say what you need to remember — rAImind generates a .ics file and opens it in Outlook for Mac. One click to confirm and it's in your Exchange calendar.
+
+> **Platform:** macOS only (Outlook for Mac). Windows support is planned — see roadmap below.
 
 ## Usage
 
@@ -92,3 +94,9 @@ For sprint reminders, confirm all 4 events.
 3. Script generates a `.ics` calendar file
 4. Outlook opens the import dialog — user clicks to confirm
 5. Event appears in Exchange calendar with popup alarm
+
+---
+
+## Roadmap
+
+- **Windows support** — the .ics file format is cross-platform; only the auto-open step needs updating (`os.startfile()` on Windows vs `open` on macOS). Contribution welcome.
