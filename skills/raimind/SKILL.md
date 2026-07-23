@@ -42,7 +42,7 @@ Creates Microsoft Outlook calendar reminders from plain language. Just say what 
    ```bash
    cp skills/raimind/remind.py ~/.claude/tools/remind.py
    ```
-   Or download it directly from [github.com/tereziamacingova/sap-ai-skills](https://github.com/tereziamacingova/sap-ai-skills/blob/main/skills/raimind/remind.py)
+   Or download it directly from the [sap-ai-skills repository](https://github.com/tereziamacingova/sap-ai-skills/blob/main/skills/raimind/remind.py)
 3. Add the following to your `~/.claude/CLAUDE.md`:
 
 ```markdown
@@ -67,7 +67,7 @@ No time = all-day event. Colleagues noted in description only — no invites sen
 - Basic: `python3 ~/.claude/tools/remind.py "tomorrow at 9am update the onepager"`
 - All-day: `python3 ~/.claude/tools/remind.py "tomorrow update the slides"`
 - Recurring: `python3 ~/.claude/tools/remind.py "every Monday at 9am update the sprint log"`
-- With colleague: `python3 ~/.claude/tools/remind.py "tomorrow at 10am standup" --with "Lucas"`
+- With colleague: `python3 ~/.claude/tools/remind.py "tomorrow at 10am standup" --with "Alice"`
 - With description: `python3 ~/.claude/tools/remind.py "tomorrow at 9am review PR" --desc "focus on auth flow"`
 - Sprint: `python3 ~/.claude/tools/remind.py sprint "2026-07-28" "2026-08-22"`
 - List: `python3 ~/.claude/tools/remind.py list`
@@ -85,7 +85,7 @@ For sprint reminders, confirm all 4 events.
 | "Remind me tomorrow at 9am to update the onepager" | 5-min event at 09:00, popup alarm |
 | "Remind me Friday to review the sprint slides" | All-day event on Friday |
 | "Every Monday at 9am remind me to update the sprint log" | Weekly recurring event |
-| "Remind me and Lucas on Friday to review the integration" | Event with "With: Lucas" in description |
+| "Remind me and Alice on Friday to review the integration" | Event with "With: Alice" in description |
 | "Set up sprint reminders, sprint starts 28 July ends 22 August" | 4 events: start · 3-days-before · SFM review Wed · SCT review Thu |
 | "Show me my rAIminds" | Summary of all upcoming reminders |
 

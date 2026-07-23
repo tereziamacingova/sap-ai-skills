@@ -6,7 +6,7 @@ Usage:
     python3 remind.py "tomorrow at 9am update the AEM onepager"
     python3 remind.py "tomorrow update the AEM onepager"              # all-day
     python3 remind.py "every Monday at 9am update the sprint log"     # recurring
-    python3 remind.py "tomorrow at 9am standup" --with "Lucas, Adria" # note colleagues (no invite sent)
+    python3 remind.py "tomorrow at 9am standup" --with "Alice, Bob" # note colleagues (no invite sent)
     python3 remind.py "tomorrow at 9am standup" --desc "Agenda: ..."  # add description
     python3 remind.py "monday from 9 to 11 work on presentations" --busy  # blocker, shown as busy
     python3 remind.py list                                             # list upcoming rAIminds
@@ -32,19 +32,6 @@ from dateutil import parser as dateutil_parser
 
 PREFIX = "[rAImind]"
 LOG_FILE = os.path.expanduser("~/.claude/tools/raimind_log.json")
-
-TEAM = {
-    "lucas":    "lucas.berger@sap.com",
-    "adria":    "adria.vidal@sap.com",
-    "mihaela":  "mihaela.voicheci@sap.com",
-    "aakash":   "aakash.awasthi@sap.com",
-    "dushyant": "dushyant.gupta@sap.com",
-    "florian":  "florian.wahl@sap.com",
-    "rike":     "rike.bloemer@sap.com",
-    "milos":    "milos.hana@sap.com",
-    "ezgi":     "ezgi.selcan@sap.com",
-    "holger":   "holger.kupsch@sap.com",
-}
 
 RECUR_DAYS = {
     "monday": "MO", "tuesday": "TU", "wednesday": "WE", "thursday": "TH",
@@ -388,11 +375,8 @@ def main():
     colleagues = []
     if with_str:
         for name in re.split(r"[,;]\s*|\s+and\s+", with_str):
-            name = name.strip().lower()
-            match = next((k for k in TEAM if k.startswith(name) or name.startswith(k)), None)
-            if match:
-                colleagues.append(match.capitalize())
-            elif name:
+            name = name.strip()
+            if name:
                 colleagues.append(name.capitalize())
 
     when, is_all_day, title, rrule, duration_mins = parse_reminder(raw.strip())
