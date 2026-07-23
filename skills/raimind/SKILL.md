@@ -38,7 +38,11 @@ Creates Microsoft Outlook calendar reminders from plain language. Just say what 
 ## Installation
 
 1. Install dependency: `pip3 install python-dateutil`
-2. Save `remind.py` to `~/.claude/tools/remind.py`
+2. Copy the script from this repo to your Claude tools folder:
+   ```bash
+   cp skills/raimind/remind.py ~/.claude/tools/remind.py
+   ```
+   Or download it directly from [github.com/tereziamacingova/sap-ai-skills](https://github.com/tereziamacingova/sap-ai-skills/blob/main/skills/raimind/remind.py)
 3. Add the following to your `~/.claude/CLAUDE.md`:
 
 ```markdown

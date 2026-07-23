@@ -1,13 +1,13 @@
 ---
 name: create-docs
 description: >
-  Generates a complete, screenshot-rich HTML documentation page for any web application
-  by autonomously navigating it with Playwright. Use this skill whenever the user wants
-  to document a tool, generate user documentation, create an onboarding guide for an app,
-  document a new feature, or says things like "document this", "create docs for",
-  "generate documentation for", "make a user guide for", or "document what this tool does".
-  Produces a fully self-contained HTML file with embedded screenshots, feature walkthroughs,
-  and a clean professional design — ready to share with no dependencies.
+  Generates a complete, screenshot-rich HTML documentation page for a specific web application
+  by navigating it with Playwright and capturing screenshots of each major screen.
+  Use this skill only when the user explicitly asks to document a specific tool or URL —
+  for example: "generate documentation for https://...", "create a user guide for this app",
+  or "document the features of [named tool]". Do not trigger on generic requests like
+  "document this" without a clear URL or app name. Requires the Playwright MCP server.
+  Produces a self-contained HTML file with embedded screenshots and feature walkthroughs.
 ---
 
 Create a complete, screenshot-rich HTML documentation page for any web application by autonomously navigating it with Playwright.
@@ -21,7 +21,7 @@ If no URL is provided, ask for one.
 
 ## Steps
 
-1. **Navigate and explore autonomously** — visit the URL, take a screenshot, then systematically explore every visible section, tab, button, and feature. Keep navigating until you have seen all major screens.
+1. **Navigate and explore** — visit the URL, take a screenshot, then navigate through the main sections and features visible in the UI. Focus on publicly accessible content. Do not attempt to interact with controls that could trigger destructive actions, submit forms with real data, or access authenticated/private areas beyond what the user has explicitly authorised.
 
 2. **Capture screenshots** at each meaningful state:
    - Landing / home screen
