@@ -101,6 +101,21 @@ For sprint reminders, confirm all 4 events.
 
 ---
 
+
+## Known limitations
+
+### Joule Work Desktop
+
+rAImind installs and runs in Joule Work Desktop, but the auto-open step does not work. Joule's sandbox blocks the `open` command, so the .ics file is created but Outlook does not open automatically. You need to navigate to the output folder and double-click the file to import it manually.
+
+**Root cause:** Joule does not yet support calendar write operations via Microsoft Graph. Creating calendar events directly (without a .ics file) requires write access, which is tracked in [JWD-491](https://jira.tools.sap/browse/JWD-491) and is currently unresolved.
+
+**Workaround:** Specify an output folder you can easily find (e.g. `~/Desktop/rAIminds/`) and double-click the .ics file after it is created. One click in Outlook confirms the import.
+
+**Seamless experience:** Available in Claude Desktop on macOS, where the `open` command works and Outlook opens automatically.
+
+---
+
 ## Roadmap
 
 - **Windows support** — the .ics file format is cross-platform; only the auto-open step needs updating (`os.startfile()` on Windows vs `open` on macOS). Contribution welcome.
