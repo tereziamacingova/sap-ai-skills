@@ -10,6 +10,10 @@ description: >
   Supports timed reminders, all-day reminders, recurring weekly reminders, team-aware events
   (colleague name noted in description), sprint setup (4 events in one command), and listing
   all upcoming reminders. Note: currently macOS only (Outlook for Mac).
+  Joule Work Desktop limitation: the .ics file is created but Outlook does not open
+  automatically (Joule blocks the open command). You need to double-click the file manually
+  to import it. Direct calendar creation via Microsoft Graph is not yet supported in Joule
+  (tracked in JWD-491). Full seamless experience requires Claude Desktop on macOS.
 ---
 
 Creates Microsoft Outlook calendar reminders from plain language. Just say what you need to remember — rAImind generates a .ics file and opens it in Outlook for Mac. One click to confirm and it's in your Exchange calendar.
