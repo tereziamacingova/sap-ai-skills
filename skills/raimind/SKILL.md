@@ -1,5 +1,5 @@
 ---
-name: rAImind
+name: raimind
 description: >
   Creates Microsoft Outlook calendar reminders from plain language in any conversation.
   Use this skill whenever the user wants to set a reminder, schedule something, create
